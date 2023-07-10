@@ -1,0 +1,39 @@
+<script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+
+<div class="container" style="margin: 100px auto">
+  <div class="row">
+    <div>
+      <h2 style="text-align: center;">Agregar nueva Publicidad</h2>
+      <br />
+      <br />
+      <form
+        action="/admin/novedades/agregar"
+        method="post"
+        ```
+        enctype="multipart/form-data"
+        style="width: 100%; align-items: center;"
+      >
+        <div class="form-group">
+          <label>Imagen:</label>
+          <input
+            type="file"
+            name="imagen"
+            id="imagen"
+            accept="image/*"
+            required
+          />
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a
+          href="http://localhost:3000/admin/novedades"
+          class="btn btn-success"
+        ><i class="fas fa-long-arrow-alt-left"> </i>Volver</a>
+      </form>
+      {{#if error}}
+        {{message}}
+      {{/if}}
+    </div>
+  </div>
+</div>
